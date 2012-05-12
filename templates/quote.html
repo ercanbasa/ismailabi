@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ quote.author }} der ki; {{ quote.quote }}</title>
+    <link href="/static/css/style.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<div class="quote">
+    {{ quote.quote }}
+    <small>{{ quote.author }}</small>
+</div>
+<a href="/" id="random">değiştir</a>
+<img alt="{{ quote.author }}" src="/{{ quote.picture.url }}">
+<div id="pattern"></div>
+</body>
+</html>
