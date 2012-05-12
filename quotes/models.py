@@ -4,7 +4,7 @@ from django.utils.encoding import smart_unicode
 class Quote(models.Model):
     quote = models.TextField()
     author = models.CharField(max_length=50)
-    picture = models.ImageField(upload_to="static/uploads")
+    picture = models.ImageField(upload_to="uploads")
 
     @models.permalink
     def get_absolute_url(self):

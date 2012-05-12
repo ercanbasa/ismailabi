@@ -3,3 +3,4 @@ data
 *.pyc
 *.swp
 local_settings.py
+static/uploads
