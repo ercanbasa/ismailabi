@@ -18,6 +18,7 @@ body {
     filter: dropshadow(color=#000000, offx=-1, offy=1);
     /*border-radius: 25px;*/
     z-index: 1;
+    line-height: 60px;
 }
 
 .quote small {
