@@ -8,7 +8,7 @@ from quotes.models import Quote
 def home(request):
     # random_quote = Quote.objects.order_by('?')
     random_quote = random.choice(Quote.objects.all())
-    if not random_quote.exists():
+    if not random_quote:
         return HttpResponse('no data available.')
     return HttpResponseRedirect(random_quote.get_absolute_url())
 
