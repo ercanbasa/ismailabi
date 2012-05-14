@@ -10,7 +10,7 @@ body {
     color: white;
     font-size: 65px;
     margin-left: 20px;
-    width: 40%;
+    width: 50%;
     padding: 30px;
     position: absolute;
     bottom: 40px;
@@ -18,7 +18,7 @@ body {
     filter: dropshadow(color=#000000, offx=-1, offy=1);
     /*border-radius: 25px;*/
     z-index: 1;
-    line-height: 65px;
+    line-height: 80px;
 }
 
 .quote small {
