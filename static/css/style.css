@@ -42,15 +42,26 @@ img {
     background: url(/static/img/pattern.png);
 }
 
-#random {
+#nav {
     position: absolute;
     right: 20px;
-    font-size: 30px;
     bottom: 20px;
     z-index: 3;
+    width: 140px;
+}
+
+#nav a {
+    width: 100%;
+    font-size: 26px;
     color: white;
     background-color: rgba(0, 0, 0, .50);
     text-decoration: none;
     padding: 3px 3px 3px 5px;
-
+    display: block;
+    margin-top: 5px;
 }
+
+#nav a:hover {
+    background-color: #00B1B8;
+}
+
