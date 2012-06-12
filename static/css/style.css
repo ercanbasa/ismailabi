@@ -27,11 +27,16 @@ body {
     text-align: right;
 }
 
-img {
+.stretched-background {
     width:100%;
     height:100%;
     position: absolute;
     z-index: 0;
+    background-size:cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background: fixed center;
 }
 
 #pattern {
