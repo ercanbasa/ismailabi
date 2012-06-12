@@ -32,11 +32,11 @@ body {
     height:100%;
     position: absolute;
     z-index: 0;
-    background-size:cover;
+    background: fixed center center;
+    background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background: fixed center;
 }
 
 #pattern {
