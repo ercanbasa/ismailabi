@@ -2,7 +2,7 @@ body {
     background: black;
     margin: 0px;
     height: 100%;
-    font-family: 'Arial';
+    font-family: Helvetica, Arial;
 }
 
 .quote {
@@ -65,3 +65,70 @@ img {
     background-color: #00B1B8;
 }
 
+#nav #submit {
+    background: #a80465;
+}
+
+#submit-quote {
+    position: absolute;
+    z-index: 4;
+    width: 50%;
+    left: 25%;
+    color: white;
+    background-color: rgba(0, 0, 0, .50);
+    padding: 30px;
+}
+
+#submit-quote label {
+    display: block;
+}
+
+#submit-quote h3, #submit-quote form {
+    padding: 5px;
+    margin: 0px;
+}
+
+#submit-quote h3 {
+    font-size: 30px
+}
+
+#submit-quote label {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+#submit-quote #id_quote, #submit-quote #id_author {
+    border: none;
+    padding: 4px 10px;
+    background: rgba(0, 0, 0, .3);
+    color: white;
+    font-weight: normal;
+    font-family: Helvetica;
+    font-size: 21px;
+    letter-spacing: 1px;
+}
+
+#submit-quote #id_quote {
+    width: 80%;
+    height: 80px;
+    resize: none;
+    padding: 10px;
+}
+
+
+#submit-quote #submit-button {
+    background: #f01f00;
+    font-size: 20px;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+#submit-quote #close-form {
+    color: white;
+}
+
+.hide {
+    display: none;
+}

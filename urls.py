@@ -6,6 +6,6 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', 'ismailabi.quotes.views.home', name='home'),
-    url(r'^quote/(?P<id>\w+)$', 'ismailabi.quotes.views.quote', name='quote'),
+    url(r'^quote/(?P<id>\w+)/$', 'ismailabi.quotes.views.quote', name='quote'),
     url(r'^admin/', include(admin.site.urls)),
 )

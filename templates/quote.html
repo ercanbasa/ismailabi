@@ -11,12 +11,12 @@
     <link href="/static/css/style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-{{ session.viewed_quotes }}
-<div class="quote">
+<div class="quote scene-1{% if show_quote_form %} hide{% endif %}">
     {{ quote.quote|linebreaksbr }}
     <small>{{ quote.author }}</small>
 </div>
-<div id="nav">
+<div id="nav" class="scene-1{% if show_quote_form %} hide{% endif %}">
+    <a href="#" id="submit">replik gönder</a>
     <a href="http://twitter.com/home?status={{ quote.author }} der ki; http://ismailabi.com{{ quote.get_absolute_url }}"
        target="_blank" id="twitter">twitter'da paylaş</a>
     <a href="https://www.facebook.com/sharer.php?u=http://ismailabi.com{{ quote.get_absolute_url }}"
@@ -25,6 +25,23 @@
 </div>
 <img alt="{{ quote.author }}" src="{{ quote.picture.url }}">
 <div id="pattern"></div>
+
+<!-- submit quote -->
+<div id="submit-quote" class="scene-2{% if not show_quote_form %} hide{% endif %}">
+    <h3>Replik Gönder</h3>
+    <form id="submit-form" action="." method="post" enctype="multipart/form-data">
+        {% if submit_quote_form.is_valid %}
+        <p>Çok teşekkür ettim hacı, gönderdiğin replik yakında buralarda gözükecek :)</p>
+        <p><a href="#" id="close-form">Kaldığın yerden devam edebilirsin.</a></p>
+        {% else %}
+            {% csrf_token %}
+            {{ submit_quote_form.as_p }}
+            <input type="submit" value="Gönder gitsin" id="submit-button" />
+            <a href="#" id="close-form">İptal de edebilirsin</a>
+        {% endif %}
+    </form>
+</div>
+
 
 <!-- google analytics -->
 <script type="text/javascript">
@@ -36,6 +53,23 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
+</script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#submit').click(function () {
+            $('.scene-1').slideUp(function () {
+                $('.scene-2').slideDown(500)
+            });
+        })
+
+        $('#close-form').click(function () {
+            $('.scene-2').slideUp(function () {
+                $('.scene-1').slideDown(500)
+            });
+        })
+
+    })
 </script>
 </body>
 </html>
