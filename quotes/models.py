@@ -8,9 +8,12 @@ class ActiveManager(models.Manager):
 
 class Quote(models.Model):
     quote = models.TextField("Replik")
-    author = models.CharField("Sahibi", max_length=50)
+    author = models.CharField("Replik sahibi", max_length=50)
     picture = models.ImageField(u"Arkaplan imajı", upload_to="uploads")
     is_active = models.BooleanField(default=False)
+    submitter_name = models.CharField("Ekleyen", max_length=255, null=True, blank=True)
+    submitter_link = models.CharField("Profil linki", max_length=255, null=True, blank=True,
+             help_text="Twitter ya da başka bir sosyal ağ adresinizi yazabilirsiniz.")
 
     objects = ActiveManager()
 

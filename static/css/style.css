@@ -88,7 +88,8 @@ body {
     display: block;
 }
 
-#submit-quote h3, #submit-quote form {
+#submit-quote h3,
+#submit-quote form {
     padding: 5px;
     margin: 0px;
 }
@@ -102,7 +103,11 @@ body {
     margin-bottom: 5px;
 }
 
-#submit-quote #id_quote, #submit-quote #id_author {
+#submit-quote #id_quote,
+#submit-quote #id_author,
+#submit-quote #id_submitter_name,
+#submit-quote #id_submitter_link
+{
     border: none;
     padding: 4px 10px;
     background: rgba(0, 0, 0, .3);
