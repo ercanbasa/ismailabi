@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sevgilin der ki; {{ quote.quote }}</title>
+    <title>{{ quote.quote }}</title>
     <link href="{{ STATIC_URL }}css/style.css" type="text/css" rel="stylesheet" />
     <meta property="og:image" content="{{ quote.picture.url }}"/>
     <link rel="image_src" type="image/jpeg" href="{{ quote.picture.url }}" />
     <link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<div class="quote scene-1{% if show_quote_form %} hide{% endif %}">
+<div class="quote scene-1">
     {{ quote.quote|linebreaksbr }}
     <small>{{ quote.author }}</small>
 </div>
-<div id="nav" class="scene-1{% if show_quote_form %} hide{% endif %}">
+<div id="nav" class="scene-1">
     <a href="/"  id="random">Değiştir</a>
 </div>
 <div class="stretched-background" style="background-image: url('{{ quote.picture.url }}');"></div>

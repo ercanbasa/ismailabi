@@ -32,14 +32,6 @@ def home(request):
 def quote(request, id):
     quote = get_object_or_404(Quote.objects.active(), id=id)
 
-    form = SubmitQuoteForm()
-    if request.method == "POST":
-        form = SubmitQuoteForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-
     return render_to_response('quote.html', context_instance=RequestContext(request, {
         'quote': quote,
-        'submit_quote_form': form,
-        'show_quote_form': request.method == 'POST'
     }))
