@@ -1,13 +1,7 @@
-<!--
-    author: Fatih Erikli
-    e-mail: fatiherikli@gmail.com
-    web: fatiherikli.com
-    source: https://github.com/fatiherikli/ismailabi
--->
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{ quote.author }} der ki; {{ quote.quote }}</title>
+    <title>Sevgilin der ki; {{ quote.quote }}</title>
     <link href="{{ STATIC_URL }}css/style.css" type="text/css" rel="stylesheet" />
     <meta property="og:image" content="{{ quote.picture.url }}"/>
     <link rel="image_src" type="image/jpeg" href="{{ quote.picture.url }}" />
@@ -19,60 +13,10 @@
     <small>{{ quote.author }}</small>
 </div>
 <div id="nav" class="scene-1{% if show_quote_form %} hide{% endif %}">
-    <a href="#" id="submit">replik gönder</a>
-    <a href="http://twitter.com/home?status={{ quote.author }} der ki; http://ismailabi.com{{ quote.get_absolute_url }}"
-       target="_blank" id="twitter">twitter'da paylaş</a>
-    <a href="https://www.facebook.com/sharer.php?u=http://ismailabi.com{{ quote.get_absolute_url }}"
-       target="_blank" id="facebook">facebook'ta paylaş</a>
-    <a href="/"  id="random">değiştir</a>
+    <a href="/"  id="random">Değiştir</a>
 </div>
 <div class="stretched-background" style="background-image: url('{{ quote.picture.url }}');"></div>
 <div id="pattern"></div>
 
-<!-- submit quote -->
-<div id="submit-quote" class="scene-2{% if not show_quote_form %} hide{% endif %}">
-    <h3>Replik Gönder</h3>
-    <form id="submit-form" action="." method="post" enctype="multipart/form-data">
-        {% if submit_quote_form.is_valid %}
-        <p>Çok teşekkür ettim hacı, gönderdiğin replik yakında buralarda gözükecek :)</p>
-        <p><a href="#" id="close-form">Kaldığın yerden devam edebilirsin.</a></p>
-        {% else %}
-            {% csrf_token %}
-            {{ submit_quote_form.as_p }}
-            <input type="submit" value="Gönder gitsin" id="submit-button" />
-            <a href="#" id="close-form">İptal de edebilirsin</a>
-        {% endif %}
-    </form>
-</div>
-
-
-<!-- google analytics -->
-<script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-31679999-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-</script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript">
-    $(function () {
-        $('#submit').click(function () {
-            $('.scene-1').slideUp(function () {
-                $('.scene-2').slideDown(500)
-            });
-        })
-
-        $('#close-form').click(function () {
-            $('.scene-2').slideUp(function () {
-                $('.scene-1').slideDown(500)
-            });
-        })
-
-    })
-</script>
 </body>
 </html>

@@ -2,8 +2,8 @@ from django.contrib import admin
 from quotes.models import Quote
 
 class QuoteAdmin(admin.ModelAdmin):
-    list_display = ('id', 'quote', 'author', 'picture', 'is_active')
-    list_editable = ('quote', 'author', 'picture', 'is_active')
+    list_display = ('id', 'quote', 'picture', 'is_active')
+    list_editable = ('quote', 'picture', 'is_active')
     actions = ['mark_active', 'mark_inactive']
 
     def mark_active(self, request, queryset):
